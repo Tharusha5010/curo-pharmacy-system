@@ -27,7 +27,7 @@ CREATE TABLE inventory(
 -- bills Table
 CREATE TABLE bills(
 	bill_id INT IDENTITY(1,1) PRIMARY KEY,
-	cachier_id VARCHAR(50) FOREIGN KEY REFERENCES staff(staff_id),
+	cashier_id VARCHAR(50) FOREIGN KEY REFERENCES staff(staff_id),
 	total_amount DECIMAL(10,2) NOT NULL,
 	discount_amount DECIMAL(10,2) NOT NULL,
 	net_total DECIMAL(10,2) NOT NULL,
