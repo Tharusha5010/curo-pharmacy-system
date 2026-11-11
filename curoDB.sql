@@ -14,10 +14,12 @@ CREATE TABLE staff(
 
 -- inventory Table
 CREATE TABLE inventory(
-	medicine_id VARCHAR(50) PRIMARY KEY,
+	medicine_id INT IDENTITY(1,1) PRIMARY KEY,
 	medicine_name VARCHAR(50) NOT NULL,
 	company_name VARCHAR(50) NOT NULL,
+	batch_number VARCHAR(50) NOT NULL,
 	unit_price DECIMAL(10,2) NOT NULL,
+	stock_quantity INT NOT NULL DEFAULT 0,
 	stock_date DATE NOT NULL,
 	exp_date DATE NOT NULL,
 	requires_prescription BIT DEFAULT 0,
@@ -31,15 +33,16 @@ CREATE TABLE bills(
 	total_amount DECIMAL(10,2) NOT NULL,
 	discount_amount DECIMAL(10,2) NOT NULL,
 	net_total DECIMAL(10,2) NOT NULL,
-	create_at DATETIME DEFAULT GETDATE(),
-	is_free_issue BIT DEFAULT 0
+	is_prescription_checked BIT DEFAULT 0,
+	is_free_issue BIT DEFAULT 0,
+	create_at DATETIME DEFAULT GETDATE()
 );
 
 --bills item Table
 CREATE TABLE bill_item(
 	item_id INT IDENTITY(1,1) PRIMARY KEY,
 	bill_id INT FOREIGN KEY REFERENCES bills(bill_id),
-	medicine_id VARCHAR(50) FOREIGN KEY REFERENCES inventory(medicine_id),
+	medicine_id INT FOREIGN KEY REFERENCES inventory(medicine_id),
 	quantity INT NOT NULL,
 	line_total DECIMAL(10,2) NOT NULL 
 );
