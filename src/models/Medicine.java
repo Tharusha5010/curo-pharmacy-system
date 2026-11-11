@@ -1,8 +1,6 @@
 package models;
 
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 public class Medicine {
 
     private int medicineId;
@@ -32,58 +30,6 @@ public class Medicine {
         this.expDate = expDate;
         this.requiresPrescription = requiresPrescription;
         this.movingType = (movingType != null) ? movingType.toUpperCase() : "SLOW"; // Default to "SLOW" if null
-    }
-
-
-    //Should be Notify.(ExpiredMedicineException.java = Sachintha Dilsara part)
-    // Method to check if the medicine is expired
-    public boolean isExpired() {
-        if (expDate == null) {
-            return false; // If no expiration date is set, consider it not expired
-        }
-        LocalDate today = LocalDate.now();
-        LocalDate expiration = expDate.toLocalDate();
-        return today.isAfter(expiration);
-    }
-
-
-    //Should be Notify.(Notification.java = Sachintha Dilsara part)
-    // Method to check if the medicine is expiring within a given number of days
-    public boolean isExpiringSoon(int days) {
-        if (expDate == null) {
-            return false; // If no expiration date is set, consider it not expiring soon
-        }
-        LocalDate today = LocalDate.now();
-        LocalDate expiration = expDate.toLocalDate();
-        long daysUntilExpiration = ChronoUnit.DAYS.between(today, expiration);
-        return daysUntilExpiration <= days && daysUntilExpiration >= 0;
-    }
-
-
-    //Should be Notify.(Notification.java = Sachintha Dilsara part)
-    // Fast-moving medicine check based on moving_type and stock_quantity
-    // Fast Moving alert if stock < 100
-    // Slow Moving alert if stock < 10
-    public boolean isFastMoving() {
-        if( "FAST".equalsIgnoreCase(movingType)){
-             return stockQuantity < 100;
-        }
-        else{
-            return stockQuantity < 10;
-        }
-    }
-
-
-    //Should be Notify.(OutOfStockException.java = Sachintha Dilsara part)
-    // Method to check if the requested quantity would result in negative stock
-    public boolean NegativeStockCheck(int requestedQty) {
-        return (this.stockQuantity - requestedQty) < 0;
-    }
-
-    //Should be Notify.(OutOfStockException.java = Sachintha Dilsara part)
-    // Method to check if the medicine is out of stock
-    public boolean isOutOfStock() {
-        return this.stockQuantity <= 0;
     }
 
 
