@@ -1,5 +1,5 @@
-package models;
+//Declare Class and Encapsulated Variables
 
-public class Notification {
-    
-}
+//Data Assigning (Creating Obects)
+
+//Accessing and Writting private fields
