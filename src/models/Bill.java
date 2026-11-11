@@ -1,7 +1,5 @@
-package models;
+//Declare Class and Encapsulated Variables
 
-public class Bill{
-    public void main(String[] args) {
-        System.out.println("Welcome to Bill.");
-    }
-}
+//Data Assigning (Creating Obects)
+
+//Accessing and Writting private fields
