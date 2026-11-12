@@ -1,6 +1,7 @@
 package models;
 
 import java.sql.Date;
+
 public class Medicine {
 
     private int medicineId;
@@ -14,11 +15,10 @@ public class Medicine {
     private boolean requiresPrescription;
     private String movingType;
 
-    // Default Constructor(Helps InventoryDAO or GUI to create an empty Medicine object).
     public Medicine() {
     }
 
-    // Parameterized Constructor
+    //Data Assigning (Creating Obects)
     public Medicine(int medicineId, String medicineName, String companyName, String batchNumber, double unitPrice, int stockQuantity, Date stockDate, Date expDate, boolean requiresPrescription, String movingType) {
         this.medicineId = medicineId;
         this.medicineName = medicineName;
@@ -29,11 +29,12 @@ public class Medicine {
         this.stockDate = stockDate;
         this.expDate = expDate;
         this.requiresPrescription = requiresPrescription;
+        //Null Safe and Convert to Uppercase
         this.movingType = (movingType != null) ? movingType.toUpperCase() : "SLOW"; // Default to "SLOW" if null
     }
 
 
-    // Getters and Setters
+    //Accessing and Writting private fields
     public int getMedicineId() {
         return medicineId;
     }
@@ -110,6 +111,6 @@ public class Medicine {
         return movingType;
     }
     public void setMovingType(String movingType) {
-        this.movingType = movingType;
+        this.movingType = (movingType != null && !movingType.trim().isEmpty()) ? movingType.trim().toUppercase() : "SLOW";
     }
 }
