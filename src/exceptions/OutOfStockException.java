@@ -1,7 +1,4 @@
-package exceptions;
+//Accepting a String message
 
-public class OutOfStockException{
-    public void main(String[] args) {
-        System.out.println("Medicine is out of stock. Please check the inventory and try again.");
-    }
-}
+
+//Pass the message to the parent Exception class

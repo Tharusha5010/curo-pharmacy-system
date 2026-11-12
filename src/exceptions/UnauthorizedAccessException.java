@@ -1,7 +1,4 @@
-package exceptions;
+//Accepting a String message
 
-public class UnauthorizedAccessException{
-    public void main(String[] args) {
-        System.out.println("Unauthorized access. Please check your credentials and try again.");
-    }
-}
+
+//Pass the message to the parent Exception class

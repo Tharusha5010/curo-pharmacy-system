@@ -1,7 +1,4 @@
-package exceptions;
+//Accepting a String message
 
-public class ExpiredMedicineException{
-    public void main(String[] args) {
-        System.out.println("Medicine is expired. Please check the expiry date before using it.");
-    }
-}
+
+//Pass the message to the parent Exception class
