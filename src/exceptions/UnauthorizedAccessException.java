@@ -1,4 +1,11 @@
-//Accepting a String message
+package exceptions;
 
+public class UnauthorizedAccessException extends Exception {
+    public UnauthorizedAccessException() {
+        super("Unauthorized access. This action requires OWNER privileges.");
+    }
 
-//Pass the message to the parent Exception class
+    public UnauthorizedAccessException(String message) {
+        super(message);
+    }
+}

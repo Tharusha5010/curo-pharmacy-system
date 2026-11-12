@@ -1,4 +1,11 @@
-//Accepting a String message
+package exceptions;
 
+public class ExpiredMedicineException extends Exception {
+    public ExpiredMedicineException() {
+        super("Medicine is expired. Please check the expiry date before issuing.");
+    }
 
-//Pass the message to the parent Exception class
+    public ExpiredMedicineException(String message) {
+        super(message);
+    }
+}

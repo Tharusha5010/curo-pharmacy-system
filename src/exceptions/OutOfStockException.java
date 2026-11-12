@@ -1,4 +1,11 @@
-//Accepting a String message
+package exceptions;
 
+public class OutOfStockException extends Exception {
+    public OutOfStockException() {
+        super("Requested quantity exceeds available stock.");
+    }
 
-//Pass the message to the parent Exception class
+    public OutOfStockException(String message) {
+        super(message);
+    }
+}
