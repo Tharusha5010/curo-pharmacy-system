@@ -111,6 +111,6 @@ public class Medicine {
         return movingType;
     }
     public void setMovingType(String movingType) {
-        this.movingType = (movingType != null && !movingType.trim().isEmpty()) ? movingType.trim().toUppercase() : "SLOW";
+        this.movingType = (movingType != null && !movingType.trim().isEmpty()) ? movingType.trim().toUpperCase() : "SLOW";
     }
 }

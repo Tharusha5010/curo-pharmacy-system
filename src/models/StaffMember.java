@@ -1,7 +1,7 @@
-package models;
+//Declare Class and Encapsulated Variables
 
-public class StaffMember{
-    public void main(String[] args) {
-        System.out.println("Welcome to StaffMember.");
-    }
-}
+
+//Data Assigning (Creating Obects)
+
+
+//Accessing and Writting private fields
