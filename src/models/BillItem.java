@@ -19,7 +19,7 @@ public class BillItem {
     public BillItem(int medicineId, String medicineName, double soldPrice, int quantity) {
         this.medicineId = medicineId;
         this.medicineName = medicineName;
-        this.unitPrice = unitPrice;
+        this.soldPrice = soldPrice;
         this.quantity = quantity;
         this.lineTotal = soldPrice * quantity;
     }
@@ -30,7 +30,7 @@ public class BillItem {
         this.billId = billId;
         this.medicineId = medicineId;
         this.medicineName = medicineName;
-        this.unitPrice = unitPrice;
+        this.soldPrice = soldPrice;
         this.quantity = quantity;
         this.lineTotal = lineTotal;
     }
