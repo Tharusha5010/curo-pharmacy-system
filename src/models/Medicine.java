@@ -29,8 +29,7 @@ public class Medicine {
         this.stockDate = stockDate;
         this.expDate = expDate;
         this.requiresPrescription = requiresPrescription;
-        //Null Safe and Convert to Uppercase
-        this.movingType = (movingType != null) ? movingType.toUpperCase() : "SLOW"; // Default to "SLOW" if null
+        setMovingType(movingType);
     }
 
 
