@@ -10,10 +10,10 @@ public class StaffMember {
     private String password;
     private String status;       
 
+    // Object creation & data initialization
     public StaffMember() {
     }
 
-    // Object creation & data initialization
     public StaffMember(String staffId, String userName, String staffName, String role,
                        String contactNumber, String password, String status) {
         this.staffId = staffId;
