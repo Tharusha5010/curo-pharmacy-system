@@ -6,16 +6,16 @@ public class Notification {
     private String title;
     private String message;
 
+    // Object creation & data initialization
     public Notification() {}
 
-    //Data Assigning (Creating Obects)
     public Notification(String type, String title, String message) {
         this.type = type;
         this.title = title;
         this.message = message;
     }
 
-    //Accessing and Writting private fields
+    //Reading and Updating private fields
     public String getType() { return type;}
     public void setType(String type) { this.type = type; }
 
