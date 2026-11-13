@@ -2,6 +2,7 @@ package models;
 
 import java.sql.Date;
 
+//Declare Class and Encapsulated Variables
 public class Medicine {
 
     private int medicineId;
@@ -15,10 +16,10 @@ public class Medicine {
     private boolean requiresPrescription;
     private String movingType;
 
+    // Object creation & data initialization
     public Medicine() {
     }
-
-    //Data Assigning (Creating Obects)
+    
     public Medicine(int medicineId, String medicineName, String companyName, String batchNumber, double unitPrice, int stockQuantity, Date stockDate, Date expDate, boolean requiresPrescription, String movingType) {
         this.medicineId = medicineId;
         this.medicineName = medicineName;
@@ -33,7 +34,7 @@ public class Medicine {
     }
 
 
-    //Accessing and Writting private fields
+    //Fetching existing bill items
     public int getMedicineId() {
         return medicineId;
     }
