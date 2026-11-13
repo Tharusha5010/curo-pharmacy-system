@@ -8,6 +8,7 @@ CREATE TABLE staff(
 	staff_id VARCHAR(50) PRIMARY KEY,
 	staff_name VARCHAR(50) NOT NULL,
 	role_ VARCHAR(50) NOT NULL CHECK (role_ IN ('OWNER', 'CASHIER')),
+	contact_number VARCHAR(10) NOT NULL,
 	password_ VARCHAR(50) NOT NULL,
 	status_ VARCHAR(50) DEFAULT 'ACTIVE' CHECK (status_ IN ('ACTIVE', 'INACTIVE'))
 );
