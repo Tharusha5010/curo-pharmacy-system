@@ -13,7 +13,7 @@ public class StaffMember {
     public StaffMember() {
     }
 
-    //Data Assigning (Creating Obects)
+    // Object creation & data initialization
     public StaffMember(String staffId, String userName, String staffName, String role,
                        String contactNumber, String password, String status) {
         this.staffId = staffId;
@@ -24,7 +24,7 @@ public class StaffMember {
         this.status = status;
     }
 
-    //Accessing and Writting private fields
+    //Reading and Updating private fields
     public String getStaffId() { return staffId; }
     public void setStaffId(String staffId) { this.staffId = staffId; }
 
