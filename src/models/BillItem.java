@@ -1,30 +1,33 @@
 package models;
 
+//Declare Class and Encapsulated Variables
 public class BillItem {
 
-    private int item_id;
-    private int bill_id;
+    private int itemId;
+    private int billId;
     private int medicineId;
     private String medicineName;
-    private double unitPrice;
+    private double soldPrice;
     private int quantity;
     private double lineTotal;
-
+    
+    // Object creation & data initialization
     public BillItem() {
     }
 
-    //Data Assigning (Creating Obects)
-    public BillItem(int medicineId, String medicineName, double unitPrice, int quantity) {
+    //Adding a new item to a bill 
+    public BillItem(int medicineId, String medicineName, double soldPrice, int quantity) {
         this.medicineId = medicineId;
         this.medicineName = medicineName;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
-        this.lineTotal = unitPrice * quantity;
+        this.lineTotal = soldPrice * quantity;
     }
 
-    public BillItem(int item_id, int bill_id, int medicineId, String medicineName, double unitPrice, int quantity, double lineTotal) {
-        this.item_id = item_id;
-        this.bill_id = bill_id;
+    //Fetching existing bill items
+    public BillItem(int itemId, int billId, int medicineId, String medicineName, double soldPrice, int quantity, double lineTotal) {
+        this.itemId = itemId;
+        this.billId = billId;
         this.medicineId = medicineId;
         this.medicineName = medicineName;
         this.unitPrice = unitPrice;
@@ -32,19 +35,19 @@ public class BillItem {
         this.lineTotal = lineTotal;
     }
 
-    //Accessing and Writting private fields
-    public int getItem_id() {
-        return item_id;
+    //Reading and Updating private fields
+    public int getItemId() {
+        return itemId;
     }
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public int getBill_id() {
-        return bill_id;
+    public int getBillId() {
+        return billId;
     }
-    public void setBill_id(int bill_id) {
-        this.bill_id = bill_id;
+    public void setBillId(int billId) {
+        this.billId = billId;
     }
 
     public int getMedicineId() {
@@ -64,9 +67,9 @@ public class BillItem {
     public double getUnitPrice() {
         return unitPrice;
     }
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-        this.lineTotal = this.unitPrice * this.quantity;
+    public void setSoldPrice(double soldPrice) {
+        this.soldPrice = soldPrice;
+        this.lineTotal = this.soldPrice * this.quantity;
     }
 
     public int getQuantity() {
@@ -74,7 +77,7 @@ public class BillItem {
     }
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-        this.lineTotal = this.unitPrice * this.quantity;
+        this.lineTotal = this.soldPrice * this.quantity;
     }
 
     public double getLineTotal() {
