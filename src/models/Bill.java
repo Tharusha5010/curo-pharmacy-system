@@ -5,95 +5,95 @@ import java.time.LocalDateTime;
 public class Bill {
 
     //Declare Class and Encapsulated Variables
-    private int bill_id;
-    private String cashier_id;
-    private double total_amount;
-    private double discount_amount;
-    private double net_total;
-    private boolean is_prescription_checked;
-    private boolean is_free_issue;
-    private LocalDateTime create_at;
+    private int billId;
+    private String cashierId;
+    private double totalAmount;
+    private double discountAmount;
+    private double netTotal;
+    private boolean isPrescriptionChecked;
+    private boolean isFreeIssue;
+    private LocalDateTime createAt;
 
     //Data Assigning (Creating Obects)
     public Bill() {
-        this.create_at = LocalDateTime.now();
+        this.createAt = LocalDateTime.now();
     }
 
-    public Bill(String cashier_id, double total_amount, double discount_amount, double net_total, boolean is_prescription_checked, boolean is_free_issue) {
-        this.cashier_id = cashier_id;
-        this.total_amount = total_amount;
-        this.discount_amount = discount_amount;
-        this.net_total = net_total;
-        this.is_prescription_checked = is_prescription_checked;
-        this.is_free_issue = is_free_issue;
-        this.create_at = LocalDateTime.now();
+    public Bill(String cashierId, double totalAmount, double discountAmount, double netTotal, boolean isPrescriptionChecked, boolean isFreeIssue) {
+        this.cashierId = cashierId;
+        this.totalAmount = totalAmount;
+        this.discountAmount = discountAmount;
+        this.netTotal = netTotal;
+        this.isPrescriptionChecked = isPrescriptionChecked;
+        this.isFreeIssue = isFreeIssue;
+        this.createAt = LocalDateTime.now();
     }
 
-    public Bill(int bill_id, String cashier_id, double total_amount, double discount_amount, double net_total, boolean is_prescription_checked, boolean is_free_issue, LocalDateTime create_at) {
-        this.bill_id = bill_id;
-        this.cashier_id = cashier_id;
-        this.total_amount = total_amount;
-        this.discount_amount = discount_amount;
-        this.net_total = net_total;
-        this.is_prescription_checked = is_prescription_checked;
-        this.is_free_issue = is_free_issue;
-        this.create_at = (create_at != null) ? create_at : LocalDateTime.now();
+    public Bill(int billId, String cashierId, double totalAmount, double discountAmount, double netTotal, boolean isPrescriptionChecked, boolean isFreeIssue, LocalDateTime createAt) {
+        this.billId = billId;
+        this.cashierId = cashierId;
+        this.totalAmount = totalAmount;
+        this.discountAmount = discountAmount;
+        this.netTotal = netTotal;
+        this.isPrescriptionChecked = isPrescriptionChecked;
+        this.isFreeIssue = isFreeIssue;
+        this.createAt = (createAt != null) ? createAt : LocalDateTime.now();
     }
 
     //Accessing and Writting private fields
-    public int getBill_id() {
-        return bill_id;
+    public int getBillId() {
+        return billId;
     }
-    public void setBill_id(int bill_id) {
-        this.bill_id = bill_id;
-    }
-
-    public String getCashier_id() {
-        return cashier_id;
-    }
-    public void setCashier_id(String cashier_id) {
-        this.cashier_id = cashier_id;
+    public void setBillId(int billId) {
+        this.billId = billId;
     }
 
-    public double getTotal_amount() {
-        return total_amount;
+    public String getCashierId() {
+        return cashierId;
     }
-    public void setTotal_amount(double total_amount) {
-        this.total_amount = total_amount;
-    }
-
-    public double getDiscount_amount() {
-        return discount_amount;
-    }
-    public void setDiscount_amount(double discount_amount) {
-        this.discount_amount = discount_amount;
+    public void setCashierId(String cashierId) {
+        this.cashierId = cashierId;
     }
 
-    public double getNet_total() {
-        return net_total;
+    public double getTotalAmount() {
+        return totalAmount;
     }
-    public void setNet_total(double net_total) {
-        this.net_total = net_total;
-    }
-
-    public boolean isIs_prescription_checked() {
-        return is_prescription_checked;
-    }
-    public void setIs_prescription_checked(boolean is_prescription_checked) {
-        this.is_prescription_checked = is_prescription_checked;
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public boolean isIs_free_issue() {
-        return is_free_issue;
+    public double getDiscountAmount() {
+        return discountAmount;
     }
-    public void setIs_free_issue(boolean is_free_issue) {
-        this.is_free_issue = is_free_issue;
+    public void setDiscountAmount(double discountAmount) {
+        this.discountAmount = discountAmount;
     }
 
-    public LocalDateTime getCreate_at() {
-        return create_at;
+    public double getNetTotal() {
+        return netTotal;
     }
-    public void setCreate_at(LocalDateTime create_at) {
-        this.create_at = (create_at != null) ? create_at : LocalDateTime.now();
+    public void setNetTotal(double netTotal) {
+        this.netTotal = netTotal;
+    }
+
+    public boolean isIsPrescriptionChecked() {
+        return isPrescriptionChecked;
+    }
+    public void setIsPrescriptionChecked(boolean isPrescriptionChecked) {
+        this.isPrescriptionChecked = isPrescriptionChecked;
+    }
+
+    public boolean isIsFreeIssue() {
+        return isFreeIssue;
+    }
+    public void setIsFreeIssue(boolean isFreeIssue) {
+        this.isFreeIssue = isFreeIssue;
+    }
+
+    public LocalDateTime getCreateAt() {
+        return createAt;
+    }
+    public void setCreateAt(LocalDateTime createAt) {
+        this.createAt = (createAt != null) ? createAt : LocalDateTime.now();
     }
 }
