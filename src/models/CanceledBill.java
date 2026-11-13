@@ -1,6 +1,7 @@
 package models;
 
 import java.sql.Timestamp; // Updated to Timestamp for date + time tracking
+import java.util.Objects;
 
 public class CanceledBill {
 
@@ -32,12 +33,14 @@ public class CanceledBill {
         this.cancelId = cancelId;
     }
 
+
     public int getBillId() {
         return billId;
     }
     public void setBillId(int billId) {
         this.billId = billId;
     }
+
 
     public String getCanceledBy() {
         return canceledBy;
@@ -46,6 +49,7 @@ public class CanceledBill {
         this.canceledBy = canceledBy;
     }
 
+
     public Timestamp getCanceledAt() {
         return canceledAt;
     }
@@ -53,10 +57,33 @@ public class CanceledBill {
         this.canceledAt = canceledAt;
     }
 
+
     public String getReason() {
         return reason;
     }
     public void setReason(String reason) {
         this.reason = reason;
+    }
+    
+
+    // toString() for debugging and logging
+    @Override
+    public String toString() {
+        return "CanceledBill [cancelId=" + cancelId + ", billId=" + billId + ", canceledBy=" + canceledBy
+                + ", canceledAt=" + canceledAt + ", reason=" + reason + "]";
+    }
+
+    // equals() and hashCode() based on cancelId
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CanceledBill that = (CanceledBill) o;
+        return cancelId == that.cancelId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cancelId);
     }
 }
