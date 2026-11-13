@@ -32,7 +32,7 @@ public class StaffMember {
     public void setStaffName(String staffName) { this.staffName = staffName; }
 
     public String getRole() { return role; }
-    public void setRole(string role) { this.role = role }
+    public void setRole(string role) { this.role = role; }
 
     public String getContactNumber() { return contactNumber; }
     public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
