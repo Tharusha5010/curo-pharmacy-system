@@ -39,11 +39,12 @@ CREATE TABLE bills(
 	create_at DATETIME DEFAULT GETDATE()
 );
 
---bills item Table
+--bill item Table
 CREATE TABLE bill_item(
 	item_id INT IDENTITY(1,1) PRIMARY KEY,
 	bill_id INT FOREIGN KEY REFERENCES bills(bill_id),
 	medicine_id INT FOREIGN KEY REFERENCES inventory(medicine_id),
+	sold_price DECIMAL(10,2) NOT NULL,
 	quantity INT NOT NULL,
 	line_total DECIMAL(10,2) NOT NULL 
 );
