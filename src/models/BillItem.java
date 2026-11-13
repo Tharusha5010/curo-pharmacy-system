@@ -64,8 +64,8 @@ public class BillItem {
         this.medicineName = medicineName;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
+    public double getSoldPrice() {
+        return soldPrice;
     }
     public void setSoldPrice(double soldPrice) {
         this.soldPrice = soldPrice;
