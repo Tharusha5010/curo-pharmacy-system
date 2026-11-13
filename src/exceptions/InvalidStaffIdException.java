@@ -1,4 +1,13 @@
-//Accepting a String message
+package exceptions;
 
+public class InvalidStaffIdException extends Exception {
+    
+    //Default general error message
+    public InvalidStaffIdException() {
+        super("Invalid or Inactive Staff ID. Please Check Your Credentials and try again.");
+    }
 
-//Pass the message to the parent Exception class 
+    public InvalidStaffIdException(String message) {
+        super(message);
+    }
+}
