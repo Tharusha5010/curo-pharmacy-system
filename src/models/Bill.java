@@ -15,7 +15,7 @@ public class Bill {
     private String cashierId;
     private double totalAmount;
     private double discountAmount;
-    private String discounReason;
+    private String discountReason;
     private double netTotal;
     private boolean isPrescriptionChecked;
     private boolean isFreeIssue;
@@ -40,7 +40,7 @@ public class Bill {
         this.isPrescriptionChecked = isPrescriptionChecked;
         this.isFreeIssue = isFreeIssue;
         this.createAt = createdAt;
-        this.item =new ArrayList<>();
+        this.items =new ArrayList<>();
     }
 
     
@@ -55,7 +55,7 @@ public class Bill {
         this.isPrescriptionChecked = isPrescriptionChecked;
         this.isFreeIssue = isFreeIssue;
         this.createAt = createdAt;
-        this.item =new ArrayList<>();
+        this.items =new ArrayList<>();
     }
 
 
