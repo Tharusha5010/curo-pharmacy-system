@@ -2,10 +2,10 @@ package auth;
 
 import models.StaffMember;
 
- //Hold the current User Session
 public class UserSession {
-   
-    private static StaffMember currentUser;
+ 
+    //Hold the current User Session
+    private static StaffMember currentUser = null;
 
     public static void setCurrentUser(StaffMember user) {
         currentUser = user;
@@ -15,6 +15,11 @@ public class UserSession {
         return currentUser;
     }
 
+    //Check the Role of the Currunt User
+    public static boolean isOwner() {
+        return currentUser != null && "OWNER".equalsIgnoreCase(currentUser.getRole());
+    }
+ 
     public static void logout() {
         currentUser = null;
     }
