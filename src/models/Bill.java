@@ -1,46 +1,66 @@
 package models;
 
-import java.time.LocalDateTime;
 
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+//Declare Class and Encapsulated Variables
 public class Bill {
 
-    //Declare Class and Encapsulated Variables
     private int billId;
     private String cashierId;
     private double totalAmount;
     private double discountAmount;
+    private String discounReason;
     private double netTotal;
     private boolean isPrescriptionChecked;
     private boolean isFreeIssue;
-    private LocalDateTime createAt;
+    private Timestamp createAt;
+    private List<BillItem> items;
 
-    //Data Assigning (Creating Obects)
+    
+
+     // Object creation & data initialization
     public Bill() {
-        this.createAt = LocalDateTime.now();
+        this.items = new ArrayList<>();
     }
 
-    public Bill(String cashierId, double totalAmount, double discountAmount, double netTotal, boolean isPrescriptionChecked, boolean isFreeIssue) {
+
+    //New Bills (before inserting into DB)
+    public Bill(String cashierId, double totalAmount, double discountAmount, String discountReason, double netTotal, boolean isPrescriptionChecked, boolean isFreeIssue, Timestamp createdAt) {
         this.cashierId = cashierId;
         this.totalAmount = totalAmount;
         this.discountAmount = discountAmount;
+        this.discountReason = discountReason;
         this.netTotal = netTotal;
         this.isPrescriptionChecked = isPrescriptionChecked;
         this.isFreeIssue = isFreeIssue;
-        this.createAt = LocalDateTime.now();
+        this.createAt = createdAt;
+        this.item =new ArrayList<>();
     }
 
-    public Bill(int billId, String cashierId, double totalAmount, double discountAmount, double netTotal, boolean isPrescriptionChecked, boolean isFreeIssue, LocalDateTime createAt) {
+    
+    //Existing Bills (when loading from DB)
+     public Bill(int billId, String cashierId, double totalAmount, double discountAmount, String discountReason, double netTotal, boolean isPrescriptionChecked, boolean isFreeIssue, Timestamp createdAt) {
         this.billId = billId;
         this.cashierId = cashierId;
         this.totalAmount = totalAmount;
         this.discountAmount = discountAmount;
+        this.discountReason = discountReason;
         this.netTotal = netTotal;
         this.isPrescriptionChecked = isPrescriptionChecked;
         this.isFreeIssue = isFreeIssue;
-        this.createAt = (createAt != null) ? createAt : LocalDateTime.now();
+        this.createAt = createdAt;
+        this.item =new ArrayList<>();
     }
 
-    //Accessing and Writting private fields
+
+    
+    //Reading and Updating private fields
     public int getBillId() {
         return billId;
     }
@@ -48,6 +68,7 @@ public class Bill {
         this.billId = billId;
     }
 
+    
     public String getCashierId() {
         return cashierId;
     }
@@ -55,12 +76,14 @@ public class Bill {
         this.cashierId = cashierId;
     }
 
+    
     public double getTotalAmount() {
         return totalAmount;
     }
     public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
+    
 
     public double getDiscountAmount() {
         return discountAmount;
@@ -69,31 +92,51 @@ public class Bill {
         this.discountAmount = discountAmount;
     }
 
+    
+     public String getDiscountReason() {
+        return discountReason;
+    }
+    public void setDiscountReason(String discountReason) {
+        this.discountReason = discountReason;
+    }
+
+
     public double getNetTotal() {
         return netTotal;
     }
     public void setNetTotal(double netTotal) {
         this.netTotal = netTotal;
     }
+    
 
-    public boolean isIsPrescriptionChecked() {
+    public boolean isPrescriptionChecked() {
         return isPrescriptionChecked;
     }
-    public void setIsPrescriptionChecked(boolean isPrescriptionChecked) {
-        this.isPrescriptionChecked = isPrescriptionChecked;
+    public void setPrescriptionChecked(boolean prescriptionChecked) {
+        isPrescriptionChecked = prescriptionChecked;
     }
 
-    public boolean isIsFreeIssue() {
+    
+    public boolean isFreeIssue() {
         return isFreeIssue;
     }
-    public void setIsFreeIssue(boolean isFreeIssue) {
-        this.isFreeIssue = isFreeIssue;
+    public void setFreeIssue(boolean freeIssue) {
+        this.isFreeIssue = freeIssue;
     }
 
-    public LocalDateTime getCreateAt() {
+    
+    public Timestamp getCreateAt() {
         return createAt;
     }
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = (createAt != null) ? createAt : LocalDateTime.now();
+    public void setCreateAt(Timestamp createAt) {
+        this.createAt = createAt;
+    }
+
+
+    public List<BillItem>getItems() {
+        return items;
+    }
+    public void setItems(List<BillItem> items) {
+        this.items = (items != null) ? items : new ArrayList<>();
     }
 }
