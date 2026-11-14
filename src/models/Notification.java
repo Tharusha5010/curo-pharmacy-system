@@ -11,7 +11,7 @@ public class Notification {
 
 
     
-    // Object creation & data initialization
+    // Object creation & data initialization(when creating a Notification)
     public Notification() {}
 
     
