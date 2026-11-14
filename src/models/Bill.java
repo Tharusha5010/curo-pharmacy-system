@@ -113,7 +113,7 @@ public class Bill {
         return isPrescriptionChecked;
     }
     public void setPrescriptionChecked(boolean prescriptionChecked) {
-        isPrescriptionChecked = prescriptionChecked;
+        this.isPrescriptionChecked = prescriptionChecked;
     }
 
     
