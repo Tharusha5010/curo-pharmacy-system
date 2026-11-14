@@ -1,31 +1,48 @@
 package models;
 
-import java.sql.Timestamp; // Updated to Timestamp for date + time tracking
-import java.util.Objects;
 
-public class CanceledBill {
+
+import java.sql.Timestamp; 
+
+
 
 //Declare Class and Encapsulated Variables
+public class CanceledBill {
+
     private int cancelId;
 	private int billId;
 	private String canceledBy;
-	private Timestamp canceledAt; // Updated to Timestamp for date + time tracking
+	private Timestamp canceledAt; 
 	private String reason;
 
-    public CanceledBill() {
-    }
 
-//Data Assigning (Creating Obects)
+	
+    public CanceledBill() {
+		this.canceledAt = new Timestamp(System.currentTimeMllis());
+    }
+	
+
+	//Create a new Cancellation Record
+    public CanceledBill(int billId, String canceledBy, String reason) {
+        this.billId = billId;
+        setCanceledBy(canceledBy);
+		setReason(reason);
+		this.canceledAt = new Timestamp(System.currentTimeMillis()):
+    }
+	
+
+	//Load Existing Records
     public CanceledBill(int cancelId, int billId, String canceledBy, Timestamp canceledAt, String reason) {
         this.cancelId = cancelId;
         this.billId = billId;
-        this.canceledBy = canceledBy;
-        this.canceledAt = canceledAt;
-        this.reason = reason;
+        setCanceledBy(canceledBy);
+		setCanceledAt(canceledAt);
+		setReason(reason);
     }
 
-//Accessing and Writting private fields
 
+	
+	//Reading and Updating private fields
     public int getCancelId() {
         return cancelId;
     }
@@ -45,45 +62,34 @@ public class CanceledBill {
     public String getCanceledBy() {
         return canceledBy;
     }
+
     public void setCanceledBy(String canceledBy) {
-        this.canceledBy = canceledBy;
+        this.canceledBy = (canceledBy != null && !canceledBy.trim().isEmpty()) ? canceledBy.trim() : "Unknown";
     }
 
-
+	
     public Timestamp getCanceledAt() {
         return canceledAt;
     }
+
     public void setCanceledAt(Timestamp canceledAt) {
-        this.canceledAt = canceledAt;
+        this.canceledAt = (canceledAt != null) ? canceledAt : new Timestamp(System.currentTimeMillis());
     }
 
-
+	
     public String getReason() {
         return reason;
     }
+
     public void setReason(String reason) {
-        this.reason = reason;
+        this.reason = (reason != null && !reason.trim().isEmpty()) ? reason.trim() : "No reason provided";
     }
     
 
-    // toString() for debugging and logging
+	//Display readable bill details
     @Override
     public String toString() {
         return "CanceledBill [cancelId=" + cancelId + ", billId=" + billId + ", canceledBy=" + canceledBy
                 + ", canceledAt=" + canceledAt + ", reason=" + reason + "]";
-    }
-
-    // equals() and hashCode() based on cancelId
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CanceledBill that = (CanceledBill) o;
-        return cancelId == that.cancelId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cancelId);
     }
 }
