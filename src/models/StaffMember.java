@@ -19,7 +19,7 @@ public class StaffMember {
     }
 
     
-    public StaffMember(String staffId, String userName, String staffName, String role,
+    public StaffMember(String staffId, String staffName, String role,
                        String contactNumber, String password, String status) {
         this.staffId = staffId;
         this.staffName = staffName;
