@@ -86,7 +86,7 @@ public class CanceledBill {
     }
     
 
-	//Display readable bill details
+	//Display Readable bill details
     @Override
     public String toString() {
         return "CanceledBill [cancelId=" + cancelId + ", billId=" + billId + ", canceledBy=" + canceledBy
