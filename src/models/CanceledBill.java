@@ -18,7 +18,7 @@ public class CanceledBill {
 
 	
     public CanceledBill() {
-		this.canceledAt = new Timestamp(System.currentTimeMllis());
+		this.canceledAt = new Timestamp(System.currentTimeMillis());
     }
 	
 
@@ -27,7 +27,7 @@ public class CanceledBill {
         this.billId = billId;
         setCanceledBy(canceledBy);
 		setReason(reason);
-		this.canceledAt = new Timestamp(System.currentTimeMillis()):
+		this.canceledAt = new Timestamp(System.currentTimeMillis());
     }
 	
 
