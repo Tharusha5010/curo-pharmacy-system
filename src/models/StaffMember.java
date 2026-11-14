@@ -14,7 +14,7 @@ public class StaffMember {
 
 
     
-    // Object creation & data initialization(Registering, Updating, Loading)
+    // Object creation & data initialization(when Registering, Updating, Loading)
     public StaffMember() {
     }
 
