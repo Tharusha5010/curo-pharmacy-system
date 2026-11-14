@@ -1,6 +1,10 @@
 package models;
 
+
+
 import java.sql.Date;
+
+
 
 //Declare Class and Encapsulated Variables
 public class Medicine {
@@ -16,9 +20,12 @@ public class Medicine {
     private boolean requiresPrescription;
     private String movingType;
 
-    // Object creation & data initialization
+
+    
+    // Object creation & data initialization(when fetching from DB)
     public Medicine() {
     }
+
     
     public Medicine(int medicineId, String medicineName, String companyName, String batchNumber, double unitPrice, int stockQuantity, Date stockDate, Date expDate, boolean requiresPrescription, String movingType) {
         this.medicineId = medicineId;
@@ -34,6 +41,7 @@ public class Medicine {
     }
 
 
+    
     //Fetching existing bill items
     public int getMedicineId() {
         return medicineId;
