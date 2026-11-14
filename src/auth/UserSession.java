@@ -8,7 +8,7 @@ import models.StaffMember;
 
 public class UserSession {
  
-    //Hold the current User Session
+    //Hold the Current User Session
     private static StaffMember currentUser = null;
 
  
